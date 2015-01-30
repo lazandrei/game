@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="LWJGL">
+    <CLASSES>
+      <root url="file://D:/Downloads/dev/lwjgl-2.9.3/lwjgl-2.9.3/jar" />
+      <root url="jar://D:/Downloads/dev/lib/slick-util.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/Downloads/dev/lwjgl-docs-2.9.3.zip!/javadoc" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://D:/Downloads/dev/lwjgl-2.9.3/lwjgl-2.9.3/native/windows" />
+      <root url="jar://D:/Downloads/dev/lib/natives-windows.jar!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://D:/Downloads/dev/lwjgl-source-2.9.3.zip!/src/generated" />
+      <root url="jar://D:/Downloads/dev/lwjgl-source-2.9.3.zip!/src/java" />
+      <root url="jar://D:/Downloads/dev/lwjgl-source-2.9.3.zip!/src/templates" />
+      <root url="jar://D:/Downloads/dev/lib/slick-util-src.zip!/" />
+    </SOURCES>
+    <jarDirectory url="file://D:/Downloads/dev/lwjgl-2.9.3/lwjgl-2.9.3/jar" recursive="false" />
+  </library>
+</component>

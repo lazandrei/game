@@ -56,7 +56,8 @@ public class Main {
         p = new Player2D(25, 25, texture);
         bg = new Background();
 
-        DisplayHelper.appendDrawables(bg);
+        DisplayHelper.drawQuads(bg);
+
         DisplayHelper.appendDrawables(pb);
         DisplayHelper.appendDrawables(p1);
     }

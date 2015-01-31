@@ -23,7 +23,7 @@ public class Background implements Drawable {
     }
 
     void init() throws IOException {
-        t = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("res/tex/pht1024.png"));
+        t = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("res/tex/pht1024x.png"));
     }
 
     @Override

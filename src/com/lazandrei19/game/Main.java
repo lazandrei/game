@@ -54,6 +54,7 @@ public class Main {
         pb = new FloorPlatform(0, Display.getHeight() - 5, Display.getWidth() + 10, 10);
         p1 = new FloatPlatform(500, 400, 80, 6);
         p = new Player2D(25, 25, texture);
+        bg = new Background();
 
         DisplayHelper.appendDrawables(bg);
         DisplayHelper.appendDrawables(pb);

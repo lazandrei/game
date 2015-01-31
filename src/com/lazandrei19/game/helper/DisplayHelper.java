@@ -1,6 +1,7 @@
 package com.lazandrei19.game.helper;
 
 import com.lazandrei19.game.util.Drawable;
+import com.sun.istack.internal.NotNull;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.Color;
 import org.newdawn.slick.opengl.Texture;
@@ -37,7 +38,7 @@ public class DisplayHelper {
         System.out.println(s);
     }
 
-    public static void drawQuads(Drawable d) {
+    public static void drawQuads(@NotNull Drawable d) {
         double x = d.getX();
         double y = d.getY();
         int w = d.getW();

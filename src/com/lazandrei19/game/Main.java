@@ -4,6 +4,7 @@ import com.lazandrei19.game.helper.DisplayHelper;
 import com.lazandrei19.game.helper.KeyboardHelper;
 import com.lazandrei19.game.helper.MouseHelper;
 import com.lazandrei19.game.player.Player2D;
+import com.lazandrei19.game.util.Background;
 import com.lazandrei19.game.util.rigidbody.FloatPlatform;
 import com.lazandrei19.game.util.rigidbody.FloorPlatform;
 import org.lwjgl.LWJGLException;
@@ -23,6 +24,7 @@ public class Main {
     Player2D p;
     FloorPlatform pb;
     FloatPlatform p1;
+    Background bg;
 
     Texture texture;
 
@@ -53,6 +55,7 @@ public class Main {
         p1 = new FloatPlatform(500, 400, 80, 6);
         p = new Player2D(25, 25, texture);
 
+        DisplayHelper.appendDrawables(bg);
         DisplayHelper.appendDrawables(pb);
         DisplayHelper.appendDrawables(p1);
     }

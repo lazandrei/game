@@ -9,7 +9,9 @@ import org.newdawn.slick.util.ResourceLoader;
 import java.io.IOException;
 
 public class Background implements Drawable {
-    int x, y, w = Display.getWidth(), h = Display.getHeight();
+    double x = 0, y = 0;
+    int w = Display.getWidth(), h = Display.getHeight();
+    Color c = new Color(33, 55, 77);
     Texture t;
 
     public Background() {
@@ -26,12 +28,12 @@ public class Background implements Drawable {
 
     @Override
     public double getX() {
-        return 0;
+        return 3;
     }
 
     @Override
     public double getY() {
-        return 0;
+        return 2;
     }
 
     @Override
@@ -46,7 +48,7 @@ public class Background implements Drawable {
 
     @Override
     public Color getColor() {
-        return null;
+        return c;
     }
 
     @Override

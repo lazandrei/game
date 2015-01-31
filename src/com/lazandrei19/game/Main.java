@@ -56,8 +56,6 @@ public class Main {
         p = new Player2D(25, 25, texture);
         bg = new Background();
 
-        DisplayHelper.drawQuads(bg);
-
         DisplayHelper.appendDrawables(pb);
         DisplayHelper.appendDrawables(p1);
     }
@@ -85,6 +83,7 @@ public class Main {
             pb.checkColision(p);
             p1.checkColision(p);
 
+            DisplayHelper.drawQuads(bg);
             DisplayHelper.drawTriangle();
             DisplayHelper.drawQuads(p);
             DisplayHelper.display();

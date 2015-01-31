@@ -1,7 +1,6 @@
 package com.lazandrei19.game.helper;
 
 import com.lazandrei19.game.util.Drawable;
-import com.sun.istack.internal.NotNull;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.Color;
 import org.newdawn.slick.opengl.Texture;
@@ -38,7 +37,7 @@ public class DisplayHelper {
         System.out.println(s);
     }
 
-    public static void drawQuads(@NotNull Drawable d) {
+    public static void drawQuads(Drawable d) {
         double x = d.getX();
         double y = d.getY();
         int w = d.getW();
@@ -62,7 +61,6 @@ public class DisplayHelper {
 
             glBindTexture(GL_TEXTURE_2D, 0);
         } else {
-            //glBindTexture(GL_TEXTURE_2D, 0);
             GL11.glColor3ub(c.getRedByte(), c.getGreenByte(), c.getBlueByte());
             glBegin(GL_QUADS);
             glVertex2d(x, y);

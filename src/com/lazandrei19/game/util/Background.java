@@ -28,12 +28,12 @@ public class Background implements Drawable {
 
     @Override
     public double getX() {
-        return 3;
+        return x;
     }
 
     @Override
     public double getY() {
-        return 2;
+        return y;
     }
 
     @Override

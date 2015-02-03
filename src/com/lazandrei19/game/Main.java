@@ -35,6 +35,8 @@ public class Main {
     }
 
     public void init() throws IOException {
+
+        //SET DISPLAY
         try {
             Display.setDisplayMode(new DisplayMode(800, 600));
             Display.create();
@@ -44,53 +46,68 @@ public class Main {
             System.exit(0);
         }
 
+        //MISC DISPLAY STUFF
         GL11.glEnable(GL11.GL_TEXTURE_2D);
 
         GL11.glClearColor(0f, 0f, 0f, 1f);
         GL11.glOrtho(0, 800, 600, 0, 1, -1);
 
+        //LOAD TEXTURE
         texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("res/tex/tex.png"));
 
+        //INIT DRAWABLES
         pb = new FloorPlatform(0, Display.getHeight() - 5, Display.getWidth() + 10, 10);
         p1 = new FloatPlatform(500, 400, 80, 6);
         p = new Player2D(25, 25, texture);
         bg = new Background();
 
+        //APPEND DRAWABLES
         DisplayHelper.appendDrawables(pb);
         DisplayHelper.appendDrawables(p1);
     }
 
     public void start() {
 
+        //Running Init
         try {
             init();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        //GAME LOOP
         while (!Display.isCloseRequested()) {
+
+            //START SCROLLING
             if (System.currentTimeMillis() - time > 2500) {
                 GL11.glTranslatef(-CAMERA_MOVEMENT, 0, 0);
                 pb.translatef(CAMERA_MOVEMENT, 0f);
                 cdx += CAMERA_MOVEMENT;
             }
 
+            //START DRAWING FRAME
             DisplayHelper.clear();
 
+            //UPDATE STUFF
             MouseHelper.update(p);
             KeyboardHelper.update(p);
             p.updatePosition(CAMERA_MOVEMENT);
+
+            //CHECK COLLISIONS
             pb.checkColision(p);
             p1.checkColision(p);
 
+            //DRAW
             DisplayHelper.drawBackground(bg);
             DisplayHelper.drawTriangle();
             DisplayHelper.drawQuads(p);
             DisplayHelper.display();
 
+            //UPDATE
             Display.update();
         }
 
+        //CLOSE
         Display.destroy();
     }
 }

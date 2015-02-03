@@ -1,9 +1,6 @@
 package com.lazandrei19.game;
 
-import com.lazandrei19.game.helper.DisplayHelper;
-import com.lazandrei19.game.helper.FileHelper;
-import com.lazandrei19.game.helper.KeyboardHelper;
-import com.lazandrei19.game.helper.MouseHelper;
+import com.lazandrei19.game.helper.*;
 import com.lazandrei19.game.player.Player2D;
 import com.lazandrei19.game.util.Background;
 import com.lazandrei19.game.util.rigidbody.FloatPlatform;
@@ -101,7 +98,7 @@ public class Main {
 
             //CHECK COLLISIONS
             pb.checkColision(p);
-//            p1.checkColision(p);
+            CollisionHelper.checkCollisions(p);
 
             //DRAW
             DisplayHelper.drawBackground(bg);

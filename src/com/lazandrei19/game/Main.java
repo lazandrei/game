@@ -83,7 +83,7 @@ public class Main {
             pb.checkColision(p);
             p1.checkColision(p);
 
-            DisplayHelper.drawQuads(bg);
+            DisplayHelper.drawBackground(bg);
             DisplayHelper.drawTriangle();
             DisplayHelper.drawQuads(p);
             DisplayHelper.display();

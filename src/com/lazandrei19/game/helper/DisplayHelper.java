@@ -1,5 +1,6 @@
 package com.lazandrei19.game.helper;
 
+import com.lazandrei19.game.util.Background;
 import com.lazandrei19.game.util.Drawable;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.Color;
@@ -69,6 +70,34 @@ public class DisplayHelper {
             glVertex2d(x, y + h);
             glEnd();
         }
+    }
+
+    public static void drawBackground(Background d) {
+        double x = d.getX();
+        double y = d.getY();
+        int w = d.getW();
+        int h = d.getH();
+        Color c = d.getColor();
+        Texture t = d.getTexture();
+
+        GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+        GL11.glBindTexture(GL_TEXTURE_2D, t.getTextureID());
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+
+        GL11.glBegin(GL11.GL_QUADS);
+        GL11.glTexCoord2f(0, 0);
+        GL11.glVertex2d(x, y);
+        GL11.glTexCoord2f(1.89f, 0);
+        GL11.glVertex2d(x + w, y);
+        GL11.glTexCoord2f(1.89f, 1f);
+        GL11.glVertex2d(x + w, y + h);
+        GL11.glTexCoord2f(0, 1);
+        GL11.glVertex2d(x, y + h);
+        GL11.glEnd();
+
+        glBindTexture(GL_TEXTURE_2D, 0);
     }
 
     public static void drawTriangle() {

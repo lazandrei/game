@@ -1,6 +1,7 @@
 package com.lazandrei19.game;
 
 import com.lazandrei19.game.helper.DisplayHelper;
+import com.lazandrei19.game.helper.FileHelper;
 import com.lazandrei19.game.helper.KeyboardHelper;
 import com.lazandrei19.game.helper.MouseHelper;
 import com.lazandrei19.game.player.Player2D;
@@ -55,15 +56,20 @@ public class Main {
         //LOAD TEXTURE
         texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("res/tex/tex.png"));
 
+        //INIT FILE HELPER
+        FileHelper fh = new FileHelper("0-0");
+
         //INIT DRAWABLES
         pb = new FloorPlatform(0, Display.getHeight() - 5, Display.getWidth() + 10, 10);
-        p1 = new FloatPlatform(500, 400, 80, 6);
         p = new Player2D(25, 25, texture);
         bg = new Background();
 
+        //MOVE PLAYER
+        fh.movePlayer(p);
+        fh.initPlatforms();
+
         //APPEND DRAWABLES
         DisplayHelper.appendDrawables(pb);
-        DisplayHelper.appendDrawables(p1);
     }
 
     public void start() {
@@ -95,7 +101,7 @@ public class Main {
 
             //CHECK COLLISIONS
             pb.checkColision(p);
-            p1.checkColision(p);
+//            p1.checkColision(p);
 
             //DRAW
             DisplayHelper.drawBackground(bg);

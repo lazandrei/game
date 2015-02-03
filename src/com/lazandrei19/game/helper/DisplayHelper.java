@@ -13,8 +13,8 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class DisplayHelper {
 
+    public static final int NUMBEROFBG = 5;
     static List<Drawable> drawables = new ArrayList<Drawable>();
-
 
     public static void appendDrawables(Drawable d) {
         drawables.add(d);
@@ -89,10 +89,10 @@ public class DisplayHelper {
         GL11.glBegin(GL11.GL_QUADS);
         GL11.glTexCoord2f(0, 0);
         GL11.glVertex2d(x, y);
-        GL11.glTexCoord2f(1.89f, 0);
-        GL11.glVertex2d(x + w, y);
-        GL11.glTexCoord2f(1.89f, 1f);
-        GL11.glVertex2d(x + w, y + h);
+        GL11.glTexCoord2f(NUMBEROFBG, 0);
+        GL11.glVertex2d(x + w * NUMBEROFBG, y);
+        GL11.glTexCoord2f(NUMBEROFBG, 1f);
+        GL11.glVertex2d(x + w * NUMBEROFBG, y + h);
         GL11.glTexCoord2f(0, 1);
         GL11.glVertex2d(x, y + h);
         GL11.glEnd();

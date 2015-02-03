@@ -6,9 +6,10 @@ import org.lwjgl.util.Color;
 import org.newdawn.slick.opengl.Texture;
 
 public abstract class PlatformBody implements RigidBody, Drawable {
-    double x, y, w, h;
+    double x, y;
+    int w, h;
 
-    public PlatformBody(int x, int y, int w, int h) {
+    public PlatformBody(double x, double y, int w, int h) {
         this.x = x;
         this.y = y;
         this.w = w;
@@ -78,11 +79,11 @@ public abstract class PlatformBody implements RigidBody, Drawable {
 
     @Override
     public int getW() {
-        return (int) w;
+        return w;
     }
 
     @Override
     public int getH() {
-        return (int) h;
+        return h;
     }
 }

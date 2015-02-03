@@ -3,7 +3,7 @@ package com.lazandrei19.game.util.rigidbody;
 import com.lazandrei19.game.player.Player2D;
 
 public class FloatPlatform extends PlatformBody {
-    public FloatPlatform(int x, int y, int w, int h) {
+    public FloatPlatform(double x, double y, int w, int h) {
         super(x, y, w, h);
     }
 

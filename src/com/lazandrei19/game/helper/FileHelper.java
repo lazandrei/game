@@ -8,9 +8,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Created by lazandrei19 on 2/3/2015.
- */
 public class FileHelper {
     double x, y;
     int w, h;
@@ -48,9 +45,17 @@ public class FileHelper {
                 y = Double.parseDouble(poss[1]);
                 w = Integer.parseInt(poss[2]);
                 h = Integer.parseInt(poss[3]);
-                FloatPlatform p = new FloatPlatform(x, y, w, h);
-                DisplayHelper.appendDrawables(p);
-                CollisionHelper.append(p);
+                String type = poss[4];
+                switch (type) {
+                    case "FloatPlatform":
+                        FloatPlatform p = new FloatPlatform(x, y, w, h);
+                        DisplayHelper.appendDrawables(p);
+                        CollisionHelper.append(p);
+                        break;
+                    case "PlatformBody":
+                        break;
+                }
+
             }
 
         } catch (IOException e) {

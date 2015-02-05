@@ -1,5 +1,6 @@
 package com.lazandrei19.game.util.softbody;
 
+import com.lazandrei19.game.helper.CollectibleHelper;
 import com.lazandrei19.game.player.Player2D;
 import com.lazandrei19.game.util.Drawable;
 import org.lwjgl.util.Color;
@@ -57,6 +58,7 @@ public abstract class CollectibleBody implements SoftBody, Drawable {
         ph += py;
         if ((((px > x) && (px < (x + w))) || ((pw > x) && (pw < (w + x)))) &&
                 (((py > y) && (py < (y + h))) || ((ph > y) && (ph < (y + h))))) {
+            CollectibleHelper.addCoins(1);
             return true;
         }
         return false;

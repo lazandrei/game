@@ -46,6 +46,9 @@ public class Main {
 
         //MISC DISPLAY STUFF
         GL11.glEnable(GL11.GL_TEXTURE_2D);
+        GL11.glShadeModel(GL11.GL_SMOOTH);
+        GL11.glDisable(GL11.GL_DEPTH_TEST);
+        GL11.glDisable(GL11.GL_LIGHTING);
 
         GL11.glClearColor(0f, 0f, 0f, 1f);
         GL11.glOrtho(0, 800, 600, 0, 1, -1);
@@ -101,10 +104,14 @@ public class Main {
             CollisionHelper.checkCollisions(p);
 
             //DRAW
+            GL11.glEnable(GL11.GL_TEXTURE_2D);
+            //GL11.glDrawBuffer(GL11.GL_FRONT_AND_BACK);
             DisplayHelper.drawBackground(bg);
             DisplayHelper.drawTriangle();
             DisplayHelper.drawQuads(p);
             DisplayHelper.display();
+            //GL11.glDrawBuffer(GL11.GL_BACK);
+            //TextHelper.showTime(time, cdx + 5, 6);
 
             //UPDATE
             Display.update();

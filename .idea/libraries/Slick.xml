@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Slick">
+    <CLASSES>
+      <root url="jar://D:/Downloads/dev/slick/Pack200Task.jar!/" />
+      <root url="file://D:/Downloads/dev/slick/lib" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://D:/Downloads/dev/slick/javadoc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://D:/Downloads/dev/slick/src" />
+      <root url="file://D:/Downloads/dev/slick/tools" />
+    </SOURCES>
+    <jarDirectory url="file://D:/Downloads/dev/slick/lib" recursive="false" />
+  </library>
+</component>

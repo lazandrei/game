@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="SlickUtil">
+    <CLASSES>
+      <root url="jar://D:/Downloads/dev/lib/ibxm.jar!/" />
+      <root url="jar://D:/Downloads/dev/lib/jogg-0.0.7.jar!/" />
+      <root url="jar://D:/Downloads/dev/lib/jorbis-0.0.15.jar!/" />
+      <root url="jar://D:/Downloads/dev/lib/lwjgl.jar!/" />
+      <root url="jar://D:/Downloads/dev/lib/lwjgl_util.jar!/" />
+      <root url="jar://D:/Downloads/dev/lib/lwjgl_util_applet.jar!/" />
+      <root url="jar://D:/Downloads/dev/lib/slick-util.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="http://slick.ninjacave.com/javadoc/" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://D:/Downloads/dev/lib/natives-windows.jar!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://D:/Downloads/dev/lib/slick-util-src.zip!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -79,7 +79,7 @@ public class DisplayHelper {
         int h = d.getH();
         Color c = d.getColor();
         Texture t = d.getTexture();
-
+        
         GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
         GL11.glBindTexture(GL_TEXTURE_2D, t.getTextureID());
 

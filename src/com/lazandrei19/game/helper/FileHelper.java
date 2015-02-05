@@ -52,7 +52,7 @@ public class FileHelper {
                         DisplayHelper.appendDrawables(p);
                         CollisionHelper.append(p);
                         break;
-                    case "PlatformBody":
+                    default:
                         break;
                 }
 

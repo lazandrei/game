@@ -2,6 +2,9 @@ package com.lazandrei19.game.helper;
 
 import com.lazandrei19.game.player.Player2D;
 import com.lazandrei19.game.util.rigidbody.FloatPlatform;
+import com.lazandrei19.game.util.softbody.Coin;
+import org.newdawn.slick.opengl.TextureLoader;
+import org.newdawn.slick.util.ResourceLoader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -51,6 +54,11 @@ public class FileHelper {
                         FloatPlatform p = new FloatPlatform(x, y, w, h);
                         DisplayHelper.appendDrawables(p);
                         CollisionHelper.append(p);
+                        break;
+                    case "Coin":
+                        Coin c = new Coin(x, y, TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("res/tex/pht32x.png")));
+                        DisplayHelper.appendDrawables(c);
+                        CollisionHelper.append(c);
                         break;
                     default:
                         break;

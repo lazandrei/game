@@ -104,14 +104,10 @@ public class Main {
             CollisionHelper.checkCollisions(p);
 
             //DRAW
-            GL11.glEnable(GL11.GL_TEXTURE_2D);
-            //GL11.glDrawBuffer(GL11.GL_FRONT_AND_BACK);
             DisplayHelper.drawBackground(bg);
             DisplayHelper.drawTriangle();
             DisplayHelper.drawQuads(p);
             DisplayHelper.display();
-            //GL11.glDrawBuffer(GL11.GL_BACK);
-            //TextHelper.showTime(time, cdx + 5, 6);
 
             //UPDATE
             Display.update();

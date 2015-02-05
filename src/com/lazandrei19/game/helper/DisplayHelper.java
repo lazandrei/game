@@ -15,9 +15,14 @@ public class DisplayHelper {
 
     public static final int NUMBEROFBG = 5;
     static List<Drawable> drawables = new ArrayList<Drawable>();
+    static List<Drawable> tbrm = new ArrayList<Drawable>();
 
     public static void appendDrawables(Drawable d) {
         drawables.add(d);
+    }
+
+    public static void removeDrawables(Drawable d) {
+        tbrm.add(d);
     }
 
     public static void clear() {
@@ -79,7 +84,7 @@ public class DisplayHelper {
         int h = d.getH();
         Color c = d.getColor();
         Texture t = d.getTexture();
-        
+
         GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
         GL11.glBindTexture(GL_TEXTURE_2D, t.getTextureID());
 
@@ -112,8 +117,9 @@ public class DisplayHelper {
     }
 
     public static void display() {
-        for (Drawable d : drawables) {
+        for (Drawable d : drawables)
             drawQuads(d);
-        }
+        for (Drawable d : tbrm)
+            drawables.remove(d);
     }
 }

@@ -4,9 +4,6 @@ import org.newdawn.slick.TrueTypeFont;
 
 import java.awt.*;
 
-/**
- * Created by lazandrei19 on 2/5/2015.
- */
 public class TextHelper {
 
     public static void writeToConsole(String s) {

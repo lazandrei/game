@@ -11,5 +11,13 @@ public interface SoftBody {
 
     void setY(double y);
 
+    int getW();
+
+    void setW(int w);
+
+    int getH();
+
+    void setH(int h);
+
     boolean checkCollision(Player2D p);
 }

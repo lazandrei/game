@@ -59,7 +59,7 @@ public class Main {
         g = GameStates.MAIN_MENU;
 
         GL11.glClearColor(0f, 0f, 0f, 1f);
-        GL11.glOrtho(0, 800, 600, 0, 1, -1);
+        GL11.glOrtho(0, DISPLAY_WIDTH, DISPLAY_HEIGHT, 0, 1, -1);
 
         //LOAD TEXTURE
         texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("res/tex/tex.png"));

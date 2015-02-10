@@ -14,8 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL15.glGenBuffers;
-import static org.lwjgl.opengl.GL30.glBindVertexArray;
 import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class DisplayHelper {
@@ -99,46 +97,6 @@ public class DisplayHelper {
             glVertex2d(x, y + h);
             glEnd();
         }
-    }
-
-    public static void drawQuadsVBO(Drawable d) {
-        int vaoId = glGenVertexArrays();
-        int vboId = glGenBuffers();
-        glBindVertexArray(vaoId);
-
-        double x = d.getX();
-        double y = d.getY();
-        int w = d.getW();
-        int h = d.getH();
-        Color c = d.getColor();
-        Texture t = d.getTexture();
-
-        if (t != null) {
-            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
-            GL11.glBindTexture(GL_TEXTURE_2D, t.getTextureID());
-            GL11.glBegin(GL11.GL_QUADS);
-            GL11.glTexCoord2f(0, 0);
-            GL11.glVertex2d(x, y);
-            GL11.glTexCoord2f(1, 0);
-            GL11.glVertex2d(x + w, y);
-            GL11.glTexCoord2f(1, 1);
-            GL11.glVertex2d(x + w, y + h);
-            GL11.glTexCoord2f(0, 1);
-            GL11.glVertex2d(x, y + h);
-            GL11.glEnd();
-
-            glBindTexture(GL_TEXTURE_2D, 0);
-        } else {
-            GL11.glColor3ub(c.getRedByte(), c.getGreenByte(), c.getBlueByte());
-            glBegin(GL_QUADS);
-            glVertex2d(x, y);
-            glVertex2d(x + w, y);
-            glVertex2d(x + w, y + h);
-            glVertex2d(x, y + h);
-            glEnd();
-        }
-
-        glBindVertexArray(0);
     }
 
     public static void drawBackground(Background d) {

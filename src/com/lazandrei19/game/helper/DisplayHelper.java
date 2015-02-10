@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL15.glGenBuffers;
+import static org.lwjgl.opengl.GL30.glBindVertexArray;
+import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class DisplayHelper {
 
@@ -63,6 +66,8 @@ public class DisplayHelper {
     }
 
     public static void drawQuads(Drawable d) {
+        int vaoId = glGenVertexArrays();
+
         double x = d.getX();
         double y = d.getY();
         int w = d.getW();
@@ -97,6 +102,10 @@ public class DisplayHelper {
     }
 
     public static void drawQuadsVBO(Drawable d) {
+        int vaoId = glGenVertexArrays();
+        int vboId = glGenBuffers();
+        glBindVertexArray(vaoId);
+
         double x = d.getX();
         double y = d.getY();
         int w = d.getW();
@@ -128,6 +137,8 @@ public class DisplayHelper {
             glVertex2d(x, y + h);
             glEnd();
         }
+
+        glBindVertexArray(0);
     }
 
     public static void drawBackground(Background d) {

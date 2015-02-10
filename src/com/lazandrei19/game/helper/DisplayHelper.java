@@ -1,9 +1,13 @@
 package com.lazandrei19.game.helper;
 
+import com.lazandrei19.game.GameStates;
 import com.lazandrei19.game.util.Background;
 import com.lazandrei19.game.util.Drawable;
+import com.lazandrei19.game.util.text.MenuCenteredText;
+import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.Color;
+import org.newdawn.slick.UnicodeFont;
 import org.newdawn.slick.opengl.Texture;
 
 import java.util.ArrayList;
@@ -43,7 +47,56 @@ public class DisplayHelper {
         System.out.println(s);
     }
 
+    public static void displayMainMenu() {
+        MenuCenteredText mct = new MenuCenteredText();
+        UnicodeFont font = mct.getWhiteFont();
+        int mx = MouseHelper.getX(), my = MouseHelper.getY();
+        float x = Display.getWidth() / 2f, y = Display.getHeight() / 2f;
+        float xt = x - font.getWidth("Start") / 2f, yt = y - font.getHeight("Start") - 5f;
+        font = mct.getFont("Start", xt, yt);
+        font.drawString(xt, yt, "Start");
+        font = new MenuCenteredText().getWhiteFont();
+        xt = x - font.getWidth("Options") / 2f;
+        yt = y + 5f;
+        font = mct.getFont("Options", xt, yt);
+        font.drawString(xt, yt, "Options");
+    }
+
     public static void drawQuads(Drawable d) {
+        double x = d.getX();
+        double y = d.getY();
+        int w = d.getW();
+        int h = d.getH();
+        Color c = d.getColor();
+        Texture t = d.getTexture();
+
+        if (t != null) {
+            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+            GL11.glBindTexture(GL_TEXTURE_2D, t.getTextureID());
+            GL11.glBegin(GL11.GL_QUADS);
+            GL11.glTexCoord2f(0, 0);
+            GL11.glVertex2d(x, y);
+            GL11.glTexCoord2f(1, 0);
+            GL11.glVertex2d(x + w, y);
+            GL11.glTexCoord2f(1, 1);
+            GL11.glVertex2d(x + w, y + h);
+            GL11.glTexCoord2f(0, 1);
+            GL11.glVertex2d(x, y + h);
+            GL11.glEnd();
+
+            glBindTexture(GL_TEXTURE_2D, 0);
+        } else {
+            GL11.glColor3ub(c.getRedByte(), c.getGreenByte(), c.getBlueByte());
+            glBegin(GL_QUADS);
+            glVertex2d(x, y);
+            glVertex2d(x + w, y);
+            glVertex2d(x + w, y + h);
+            glVertex2d(x, y + h);
+            glEnd();
+        }
+    }
+
+    public static void drawQuadsVBO(Drawable d) {
         double x = d.getX();
         double y = d.getY();
         int w = d.getW();
@@ -116,7 +169,7 @@ public class DisplayHelper {
         glEnd();
     }
 
-    public static void display() {
+    public static void display(GameStates g) {
         for (Drawable d : drawables)
             drawQuads(d);
         for (Drawable d : tbrm)

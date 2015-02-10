@@ -16,6 +16,17 @@ public class TextHelper {
         System.out.println(s);
     }
 
+    public static void showCenteredText(String text, float x, float y, int pos, int end) {
+        font.getEffects().add(new ColorEffect(java.awt.Color.white));
+        GL11.glDisable(GL11.GL_TEXTURE_2D);
+        font.addAsciiGlyphs();
+        try {
+            font.loadGlyphs();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        font.drawString(x, y, text);
+    }
     public static void showTime(long stime, float x, float y) {
         font.getEffects().add(new ColorEffect(java.awt.Color.white));
         GL11.glDisable(GL11.GL_TEXTURE_2D);
